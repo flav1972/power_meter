@@ -61,7 +61,7 @@
 Adafruit_INA219 ina219;
 unsigned long lastSampleTime = 0;
 unsigned long sampleDelayMS = 500;
-bool isSampling = false;
+bool isSampling = true;
 
 void setup(void) 
 {
@@ -76,6 +76,11 @@ void setup(void)
 
   // Initialize the INA219.  
   ina219.begin();
+
+
+  STREAM.println("Ready !!!");
+  STREAM.println("use X to stop, Snnn to start, nnn=sample rate in ms");
+  STREAM.println("shuntvoltage,busvoltage,current_mA");
 }
 
 void loop(void) 
