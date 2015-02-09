@@ -76,7 +76,8 @@ void setup(void)
 
   // Initialize the INA219.  
   ina219.begin();
-
+  // for a more precise reading replace in the Adafruit_INA219 library in the function begin
+  // ina219SetCalibration_32V_2A() by  ina219.ina219SetCalibration_16V_400mA()
 
   STREAM.println("Ready !!!");
   STREAM.println("use X to stop, Snnn to start, nnn=sample rate in ms");
